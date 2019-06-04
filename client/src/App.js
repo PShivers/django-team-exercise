@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Nav from './components/NavBar';
+import Posts from './components/Posts';
+import { getPosts } from './util.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    posts: []
+  };
+
+  componentDidMount() {
+    getPosts().then(posts => {
+      this.setState({
+        posts: posts.data
+      });
+    });
+  }
+
+  render() {
+    const PostsC = routeprops => <Posts {...routeprops} state={this.state} />;
+
+    return (
+      <div>
+        <Router>
+          <Nav />
+          <Switch>
+            <Route exact path="/" render={PostsC} />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
