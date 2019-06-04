@@ -4,11 +4,16 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+autopep8 = "*"
 
 [packages]
-django = "*"
+pytz = "==2017.2"
+Django = "==2.0.5"
+django-extensions = "*"
 psycopg2-binary = "*"
+
 djangorestframework = "*"
 
 [requires]
 python_version = "3.7.3"
+
