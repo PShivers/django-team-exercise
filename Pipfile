@@ -8,11 +8,8 @@ autopep8 = "*"
 
 [packages]
 pytz = "==2017.2"
-Django = "==2.0.5"
-django-extensions = "*"
-psycopg2-binary = "*"
-django-rest-framework = "*"
+Django = "==2.0.51Vbzcdjango-rest-framework = "*"
 djangorestframework = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.7.3"
