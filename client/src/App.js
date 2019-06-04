@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/NavBar';
 import Posts from './components/Posts';
 import { getPosts } from './util.js';
@@ -18,12 +18,14 @@ class App extends Component {
   }
 
   render() {
+    const PostsC = routeprops => <Posts {...routeprops} state={this.state} />;
+
     return (
       <div>
         <Router>
           <Nav />
           <Switch>
-            <Posts />
+            <Route exact path="/" render={PostsC} />
           </Switch>
         </Router>
       </div>
