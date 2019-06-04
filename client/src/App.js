@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import Nav from './components/NavBar'
 
 class App extends Component {
   state = {};
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div>
         <Router>
+          <Nav />
           <Switch />
         </Router>
       </div>
