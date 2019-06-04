@@ -6,12 +6,12 @@ class Nav extends Component {
   render() {
     return (
       <div className="nav">
-        <h1>appBay</h1>
-        <Link to="/">About appBay</Link>
+        <h1>Redditish</h1>
+        <Link to="/">About</Link>
 
-        <Link to="/ideaists">Ideaists</Link>
+        <Link to="/posts">Posts</Link>
 
-        <Link to="/devs">Developers</Link>
+        <Link to="/users">Users</Link>
       </div>
     );
   }

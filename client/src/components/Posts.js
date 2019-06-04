@@ -13,7 +13,7 @@ class Posts extends Component {
         </h4>
 
         <div className="listOfPosts">
-          <List>
+          <ul>
             {this.props.state.posts.map(posts => {
               let linkVar = `/posts/${posts._id}`;
               return (
@@ -24,7 +24,7 @@ class Posts extends Component {
                 </li>
               );
             })}
-          </List>
+          </ul>
         </div>
       </div>
     );

@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken import views as auth_views
+from . import views
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('redditish.urls')),
-    path('api-auth/', auth_views.obtain_auth_token),
+    path('backend/', include('redditish.urls')),
+    path('', views.FrontendAppView.as_view()),
+    path('api-auth/', auth_views.obtain_auth_token)
 ] 
