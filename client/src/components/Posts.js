@@ -6,7 +6,26 @@ class Posts extends Component {
   render() {
     return (
       <div className="posts">
-        <div />
+        <h1>Posts</h1>
+
+        <h4>
+          <Link to="/posts/create">Create Post</Link>
+        </h4>
+
+        <div className="listOfPosts">
+          <List>
+            {this.props.state.posts.map(posts => {
+              let linkVar = `/posts/${posts._id}`;
+              return (
+                <li key={posts._id}>
+                  <h2>
+                    <Link to={linkVar}>{posts.name}</Link>
+                  </h2>
+                </li>
+              );
+            })}
+          </List>
+        </div>
       </div>
     );
   }
