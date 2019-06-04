@@ -13,12 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from .views import PostViewSet, CommentViewSet
-from rest_framework import routers
-                                                         
-router = routers.SimpleRouter()
+from django.contrib import admin
+from django.urls import path, include
+from rest_framework.authtoken import views as auth_views
 
-router.register('posts', PostViewSet)
-router.register('comments', CommentViewSet)
- 
-urlpatterns = router.urls
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('redditish.urls')),
+    path('api-auth/', auth_views.obtain_auth_token),
+] 
