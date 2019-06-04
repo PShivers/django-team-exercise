@@ -84,7 +84,7 @@ DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'redditish_database',
-       'USER': 'andrew',
+       'USER': 'redditishuser',
        'PASSWORD': 'password',
        'HOST': 'localhost'
    }
