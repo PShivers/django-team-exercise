@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'redditish',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -74,10 +76,13 @@ WSGI_APPLICATION = 'redditish_django.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'redditish_database',
+       'USER': 'andrew',
+       'PASSWORD': 'password',
+       'HOST': 'localhost'
+   }
 }
 
 
