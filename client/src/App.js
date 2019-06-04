@@ -9,13 +9,13 @@ class App extends Component {
     posts: []
   };
 
-  componentDidMount() {
-    getPosts().then(posts => {
-      this.setState({
-        posts: posts.data
-      });
-    });
-  }
+  // componentDidMount() {
+  //   getPosts().then(posts => {
+  //     this.setState({
+  //       posts: posts.data
+  //     });
+  //   });
+  // }
 
   render() {
     const PostsC = routeprops => <Posts {...routeprops} state={this.state} />;
