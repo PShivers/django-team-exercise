@@ -10,6 +10,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    console.log('componentDidMount checking in!');
     getPosts().then(posts => {
       this.setState({
         posts: posts.data
