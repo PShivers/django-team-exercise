@@ -5,5 +5,6 @@ import axios from 'axios';
 //=====================
 
 export function getPosts() {
-  return axios.get('/posts');
+  console.log('axios get req made');
+  return axios.get('backend/posts');
 }
