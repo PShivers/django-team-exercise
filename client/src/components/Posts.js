@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Posts extends Component {
-  state = {};
   render() {
     return (
       <div className="posts">
@@ -15,12 +14,13 @@ class Posts extends Component {
         <div className="listOfPosts">
           <ul>
             {this.props.state.posts.map(posts => {
-              let linkVar = `/posts/${posts._id}`;
+              let linkVar = `/posts/${posts.id}`;
               return (
-                <li key={posts._id}>
+                <li key={posts.id}>
                   <h2>
-                    <Link to={linkVar}>{posts.name}</Link>
+                    <Link to={linkVar}>{posts.title}</Link>
                   </h2>
+                  <p>{posts.content}</p>
                 </li>
               );
             })}
