@@ -26,7 +26,7 @@ class App extends Component {
         <Router>
           <Nav />
           <Switch>
-            <Route exact path="/" render={PostsC} />
+            <Route exact path="/posts" render={PostsC} />
           </Switch>
         </Router>
       </div>
